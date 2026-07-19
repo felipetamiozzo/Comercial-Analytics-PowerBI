@@ -1,0 +1,11 @@
+# Arquivos temporários do Power BI
+~$*.pbix
+
+# Configurações locais do Power BI
+**/.pbi/localSettings.json
+
+# Arquivos de sistema operacional (Windows/Mac)
+Thumbs.db
+Desktop.ini
+.DS_Store
+
