@@ -1,79 +1,163 @@
 
 ```markdown
-# 📊 Comercial Analytics - Dashboard Gerencial
+# Comercial Analytics | PowerBI
 
-![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
-![DAX](https://img.shields.io/badge/DAX-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)
-![UI/UX](https://img.shields.io/badge/UI/UX-Design-FF007F?style=for-the-badge)
+![Capa do Projeto](assets/capa.jpg) 
 
-Este repositório contém um dashboard gerencial de alto nível para análise de performance comercial. O projeto simula a experiência fluida de um aplicativo web (App-like experience) através de uma navegação interativa e refinamento visual de primeiríssima linha.
+## 📋 Visão Geral do Projeto
+Este projeto de Análise de Dados foi desenvolvido para monitorar indicadores estratégicos de vendas, faturamento e performance comercial. Seguindo padrões de mercado em nível de excelência, o dashboard transforma dados brutos em insights acionáveis, entregando à diretoria e aos gestores uma ferramenta ágil para identificar gargalos na margem de lucro e ranquear a performance regional e individual.
 
-O foco foi transformar dados brutos em insights estratégicos e operacionais claros, utilizando técnicas avançadas de DAX, HTML/CSS incorporado e modelagem Star Schema.
+O projeto se destaca por simular a experiência fluida de um aplicativo web (App-like experience), utilizando técnicas avançadas de inteligência de tempo no DAX, formatações condicionais de alto nível e customizações de interface inovadoras usando HTML e CSS nativamente dentro do Power BI.
 
-## 🎯 Objetivo e Contexto de Negócio
-O objetivo é fornecer à diretoria e às equipes de operações comerciais uma ferramenta ágil para o monitoramento de KPIs críticos. O painel permite identificar gargalos na margem de lucro, gerenciar sazonalidade de vendas e ranquear a performance regional e individual dos vendedores, tudo em um layout intuitivo e focado na experiência do usuário.
+---
 
-## 📂 Estrutura do Repositório
+## 📁 Estrutura do Repositório
+O projeto foi organizado para facilitar a compreensão do fluxo de dados, versionamento e manutenção:
 
 ```text
-📦 Comercial_Analytics
- ┣ 📂 Comercial_Analytics.Report         # Arquivos de projeto do relatório
- ┣ 📂 Comercial_Analytics.SemanticModel  # Metadados do modelo semântico
- ┣ 📂 assets                             # Capturas de tela e plano de fundo poligonal
- ┣ 📂 data                               # Amostra do dataset e dicionário de dados
- ┣ 📂 dax_scripts                        # Códigos DAX HTML/CSS dos botões e títulos
- ┣ 📜 Comercial_Analytics.pbip           # Arquivo de Projeto do Power BI (Source Control)
- ┣ 📜 Comercial_Analytics.pbix           # Arquivo executável completo do Power BI
- ┗ 📜 README.md                          # Documentação do projeto
+📁 Comercial_Analytics
+ ┣ 📂 assets                             # Prints e imagens do dashboard
+ ┣ 📂 data                               # Base de dados original / Dicionário
+ ┣ 📂 dax_scripts                        # Lógica avançada de cartões HTML/CSS e MoM
+ ┣ 📂 Comercial_Analytics.Report         # Metadados do relatório (.pbip)
+ ┣ 📂 Comercial_Analytics.SemanticModel  # Metadados do modelo semântico (.pbip)
+ ┣ 📄 Comercial_Analytics.pbip           # Projeto (Versão técnica versionada)
+ ┣ 📄 Comercial_Analytics.pbix           # Projeto (Versão clássica)
+ ┗ 📄 README.md                          # Documentação completa do projeto
 
 ```
 
-## 🚀 Navegação e Experiência do Usuário (UI/UX)
+---
 
-A interface foi desenhada para guiar o usuário em uma jornada analítica.
+## 🎯 Estrutura de Análise (Módulos)
 
-**1. Home (Capa Interativa)**
-Esta tela funciona como um HUB central. Os botões foram desenvolvidos com medidas DAX incorporando HTML/CSS para criar efeitos corporativos de *Glassmorphism*, sombras e Hover Effects dinâmicos (ao passar o mouse).
+O dashboard foi projetado como uma aplicação interativa, dividida em um HUB central e 3 pilares analíticos:
 
-## 📈 Análise Geral e KPIs Chave (Visão Executiva)
-
-Esta visão consolida os principais indicadores para uma rápida tomada de decisão da diretoria.
-
-**Principais Insights e Métricas Chave:**
-
-* **Faturamento Total de R$ 359k:** Mostra um crescimento sólido de +2.3% MoM (Mês sobre Mês).
-* **Crescimento do Volume de Vendas:** Aumento de +3.6%, totalizando 457 vendas.
-* **Lucro Líquido de R$ 290k:** Alta de +2.1% MoM, com uma margem de lucro saudável.
-* **Alerta de Ticket Médio (-1.3%):** Identificação de uma leve queda MoM, sugerindo a necessidade de rever estratégias de precificação ou mix de produtos.
-* **Análise de Mix:** A categoria "Eletrodomésticos" lidera o faturamento com R$ 193 mil. "Brastemp" é o fabricante com maior performance (R$ 93 mil). O segmento "Doméstico" concentra a maior parte das vendas.
-
-## 📅 Gerenciamento de Sazonalidade e Tendências (Visão Temporal)
-
-Esta análise foca em entender como as métricas se comportam ao longo do tempo.
-
-**Principais Insights e Métricas Chave:**
-
-* **Picos de Faturamento em JAN (+50%) e SET (+36%):** Identificação de meses com alta performance sazonal.
-* **Alerta de Margem de Lucro:** Mostra uma tendência de queda no final do ano, com um ponto de atenção em AGO.
-* **Quedas de Faturamento MoM:** Monitoramento das variações negativas em JUN (-29%) e AGO (-36%).
-* **Monitoramento de Margem e Custos:** A comparação entre "Faturamento", "Custos" e "Margem" permite antecipar problemas de rentabilidade.
-* **Análise Combinada:** O gráfico de linhas duplas permite correlacionar Volume de Vendas e Ticket Médio para entender o impacto total no faturamento mensal.
-
-## 👤 Performance Regional e de Vendedores (Visão Operacional)
-
-Foco em métricas para a gestão de equipes e estratégias geográficas.
-
-**Principais Insights e Métricas Chave:**
-
-* **Concentração Geográfica SP e RJ:** São Paulo lidera o faturamento com R$ 184 mil, seguido pelo Rio de Janeiro com R$ 107 mil. Estes dois estados concentram a maior parte do resultado comercial.
-* **Análise de Top Performers:** O vendedor André Pereira lidera com R$ 87 mil em faturamento, destacando-se significativamente da média da equipe.
-* **Análise de Lojas:** O gráfico de dispersão permite identificar lojas com alta performance de vendas e margem de lucro, facilitando a identificação de *outliers* de sucesso.
-
-## 🛠️ Destaques Técnicos
-
-* **Integração HTML/CSS no DAX:** Desenvolvimento de componentes visuais 100% customizados e interativos (hover effect dinâmico), superando as limitações visuais nativas do Power BI para criar uma experiência de aplicativo.
-* **Inteligência de Tempo no DAX:** Cálculos avançados para medição de variações Mês sobre Mês (MoM) de Faturamento, Lucro, Volume e Ticket Médio.
-* **Governança de Medidas:** Implementação de *Display Folders* (Pastas de Exibição) para uma estruturação lógica e limpa de medidas, visando escalabilidade e manutenção do código corporativo.
-* **Modelagem Star Schema:** Organização do modelo semântico otimizado para performance.
+1. **Capa Interativa (Home):** Ponto de partida com navegação guiada por botões HTML interativos.
+2. **Visão Executiva:** Resumo de alto nível (Faturamento, Lucro, Volume, Ticket Médio) e composição de vendas por categoria e fabricante.
+3. **Visão Temporal:** Acompanhamento de sazonalidade, evolução Mês a Mês (MoM) de faturamento e correlação de margem de lucro vs. custos.
+4. **Visão Operacional:** Avaliação de performance geográfica (por estado) e ranqueamento dos Top 5 Vendedores e lojas de destaque.
 
 ---
+
+## 🖥️ Telas do Dashboard e Métricas Chave
+
+### 1. Visão Executiva
+
+**Principais Insights do Módulo:**
+
+* **Faturamento Total:** R$ 359,3 mil (Crescimento sustentável de +2.3% MoM).
+* **Lucro Líquido:** R$ 290,8 mil (+2.1% MoM), demonstrando excelente rentabilidade frente aos custos operacionais.
+* **Volume vs Ticket:** Foram registradas 457 vendas (+3.6%). O Ticket Médio ficou em R$ 786,23, apresentando um leve alerta de queda (-1.3%) que exige atenção nas estratégias de *upsell*.
+* **Análise de Mix (Top Performers):** A categoria "Eletrodomésticos" domina as receitas (R$ 193 mil), com a marca "Brastemp" liderando o faturamento individual de fabricantes (R$ 93 mil).
+
+### 2. Visão Temporal
+
+**Principais Insights do Módulo:**
+
+* **Sazonalidade e Picos:** Identificação clara de meses com altíssima performance, com picos de crescimento de faturamento em Janeiro (+50%) e Setembro (+36%).
+* **Controle de Margem de Lucro:** A margem manteve-se estável acima de 80% na maior parte do ano, sofrendo quedas sensíveis nos meses de Agosto e Dezembro (ponto focal de investigação de custos).
+* **Variações Críticas:** Quedas acentuadas de faturamento mês a mês foram detectadas em Junho (-29%) e Agosto (-36%).
+
+### 3. Visão Operacional
+
+**Principais Insights do Módulo:**
+
+* **Dominância Regional (Sudeste):** São Paulo (R$ 184 mil) e Rio de Janeiro (R$ 107 mil) concentram quase a totalidade das receitas comerciais.
+* **Top Performers (Vendas):** O vendedor André Pereira isolou-se em primeiro lugar, convertendo R$ 87 mil em faturamento, apresentando uma performance muito superior à média da equipe de vendas.
+* **Oportunidade e Alinhamento:** O gráfico de dispersão revela a correlação entre margem e desempenho bruto das lojas, evidenciando unidades de negócio que requerem planos de ação específicos.
+
+---
+
+## ⚙️ ETL e Tratamento de Dados (Power Query)
+
+Os dados brutos passaram por um rigoroso processo de estruturação para compor um modelo Star Schema otimizado para performance:
+
+* **Tabela Fato (`Vendas`):**
+* Tipagem estrita de dados financeiros e operacionais (Faturamento, Custos, Comissão).
+* Criação de chaves substitutas para relacionamento seguro com as dimensões.
+
+
+* **Dimensão de Tempo (`dCalendario`):**
+* Tabela gerada dinamicamente (Relacionamento 1:N).
+* Extração de features temporais auxiliares (Ano, Mês, Num_Mes) essenciais para as análises de Inteligência de Tempo (Time Intelligence).
+
+
+
+---
+
+## 🧠 Modelagem e Linguagem DAX
+
+O projeto utiliza um modelo relacional otimizado, governança rigorosa de medidas via *Display Folders* (Pastas de Exibição) e conceito de *Measure Branching*. Abaixo, algumas das principais métricas desenvolvidas:
+
+**Lógica de Negócios (Measure Branching):**
+
+```dax
+Faturamento Total = SUM(Vendas[ValorVenda])
+Custo Total = SUM(Vendas[Custo])
+Total Comissão = SUM(Vendas[Valor Comissão ])
+
+Lucro Líquido = [Faturamento Total] - [Custo Total] - [Total Comissão]
+Margem de Lucro % = DIVIDE([Lucro Líquido], [Faturamento Total], 0)
+
+```
+
+**Inteligência de Tempo e Variações (MoM):**
+
+```dax
+Faturamento Mês Anterior = 
+CALCULATE(
+    [Faturamento Total],
+    DATEADD(dCalendario[Date], -1, MONTH)
+)
+
+Var % Faturamento = 
+DIVIDE(
+    [Faturamento Total] - [Faturamento Mês Anterior],
+    [Faturamento Mês Anterior]
+)
+
+```
+
+**Formatação Condicional Avançada via Variáveis:**
+
+```dax
+-- Exemplo de estrutura condicional aplicada dentro dos cartões HTML
+VAR Indicador =
+IF(
+    ISBLANK(Perc), "",
+    IF(Perc >= 0,
+        "<div style='color:#6EEB83;'> ▲ " & FORMAT(Perc,"0.0%") & "</div>",
+        "<div style='color:#FF8A80;'> ▼ " & FORMAT(ABS(Perc),"0.0%") & "</div>"
+    )
+)
+
+```
+
+---
+
+## 🎨 UI/UX e Data Storytelling
+
+* **HTML Content no DAX:** Criação de componentes visuais 100% customizados, superando limitações nativas da ferramenta.
+* **App-Like Experience:** Utilização de *Glassmorphism* (Brilho interno e transparências), gradientes em botões e efeitos dinâmicos (*Hover effects* que reagem ao passar o mouse).
+* **Paleta Estratégica:** Layout *clean* com contraste bem definido entre os tons de azul e roxo institucionais para guiar a atenção aos KPIs, com uso semântico de verde/vermelho para indicadores de performance.
+
+---
+
+## 🚀 Como Visualizar
+
+1. Faça o clone: `git clone https://github.com/felipetamiozzo/Comercial_Analytics.git`
+2. Abra o arquivo `Comercial_Analytics.pbix` no Power BI Desktop.
+
+---
+
+## 👨‍💻 Autor
+
+**Felipe Tamiozzo** | *Analista de Dados*
+
+* [LinkedIn](https://www.linkedin.com/in/felipetamiozzo/)
+* [GitHub](https://github.com/felipetamiozzo)
+
+```
+
+```
