@@ -1,5 +1,4 @@
 
-```markdown
 # Comercial Analytics | PowerBI
 
 ![Capa do Projeto](assets/capa.jpg) 
@@ -160,4 +159,3 @@ IF(
 
 ```
 
-```
