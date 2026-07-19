@@ -1,0 +1,49 @@
+// =========================================================================
+// SCRIPTS DE KPIs PRINCIPAIS E REGRAS DE NEGÓCIO
+// =========================================================================
+// Desenvolvedor: Felipe Tamiozzo
+// Descrição: Este arquivo contém as métricas fundamentais (Core KPIs)
+// que regem a lógica de negócios do painel. Demonstra o uso de agregações
+// básicas e o conceito de "Measure Branching" (Medidas aninhadas), 
+// garantindo uma única fonte de verdade para os cálculos financeiros.
+// =========================================================================
+
+
+// -------------------------------------------------------------------------
+// 1. AGREGAÇÕES BÁSICAS (BASE MEASURES)
+// Cálculos diretos nas colunas da tabela de fatos (Vendas).
+// -------------------------------------------------------------------------
+
+Faturamento Total = SUM(Vendas[ValorVenda])
+
+Volume de Vendas = COUNTROWS(Vendas)
+
+Custo Total = SUM(Vendas[Custo])
+
+Total Comissão = SUM(Vendas[Valor Comissão ])
+
+
+// -------------------------------------------------------------------------
+// 2. LÓGICA DE NEGÓCIO (MEASURE BRANCHING E RATIOS)
+// Reutilização das medidas base para compor indicadores de performance.
+// Isso garante escalabilidade: se a regra do Faturamento mudar, 
+// o Lucro e a Margem são atualizados em cascata automaticamente.
+// O uso da função DIVIDE previne erros de divisão por zero.
+// -------------------------------------------------------------------------
+
+Lucro Líquido = 
+[Faturamento Total] - [Custo Total] - [Total Comissão]
+
+Ticket Medio = 
+DIVIDE(
+    [Faturamento Total], 
+    [Volume de Vendas],
+    0
+)
+
+Margem de Lucro % = 
+DIVIDE(
+    [Lucro Líquido], 
+    [Faturamento Total],
+    0
+)

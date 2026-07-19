@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "401ca471d948c3442f35",
+  "position": {
+    "x": 383.4277198211625,
+    "y": 10.491803278688526,
+    "z": 8001,
+    "height": 66.766020864381531,
+    "width": 513.14456035767512,
+    "tabOrder": 8001
+  },
+  "visual": {
+    "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+    "query": {
+      "queryState": {
+        "content": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Titulo HTML Insight Vendas"
+                }
+              },
+              "queryRef": "_Medidas.Titulo HTML Insight Vendas",
+              "nativeQueryRef": "Titulo HTML Insight Vendas"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

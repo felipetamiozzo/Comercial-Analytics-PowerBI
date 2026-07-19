@@ -1,0 +1,92 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.2.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY26SU04",
+      "reportVersionAtImport": {
+        "visual": "2.8.0",
+        "report": "3.2.0",
+        "page": "2.3.1"
+      },
+      "type": "SharedResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "publicCustomVisuals": [
+    "htmlContent443BE3AD55E043BF878BED274D3A6855"
+  ],
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY26SU04",
+          "path": "BaseThemes/CY26SU04.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "0992a303-121e-4a3e-abc1-f854be1008264202540754.png",
+          "path": "0992a303-121e-4a3e-abc1-f854be1008264202540754.png",
+          "type": "Image"
+        },
+        {
+          "name": "0992a303-121e-4a3e-abc1-f854be19922356514537043.png",
+          "path": "0992a303-121e-4a3e-abc1-f854be19922356514537043.png",
+          "type": "Image"
+        },
+        {
+          "name": "0992a303-121e-4a3e-abc1-f854be6703667427915428.png",
+          "path": "0992a303-121e-4a3e-abc1-f854be6703667427915428.png",
+          "type": "Image"
+        },
+        {
+          "name": "0992a303-121e-4a3e-abc1-f854be7188998514090097.png",
+          "path": "0992a303-121e-4a3e-abc1-f854be7188998514090097.png",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  }
+}

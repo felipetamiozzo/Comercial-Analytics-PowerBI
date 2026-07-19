@@ -1,0 +1,71 @@
+// =========================================================================
+// SCRIPTS DE INTELIGÊNCIA DE TEMPO E VARIAÇÕES
+// =========================================================================
+// Desenvolvedor: Felipe Tamiozzo Silveira
+// Descrição: Este arquivo contém as medidas DAX focadas em análise temporal 
+// (Time Intelligence). O objetivo é calcular o deslocamento de períodos 
+// (Mês a Mês - MoM) e suas respectivas variações percentuais para 
+// monitoramento de tendências de negócio.
+// =========================================================================
+
+
+// -------------------------------------------------------------------------
+// 1. DESLOCAMENTO TEMPORAL (MÊS ANTERIOR)
+// Utilização da função CALCULATE modificando o contexto de filtro com 
+// DATEADD para retornar o valor exato do mês anterior (-1, MONTH).
+// -------------------------------------------------------------------------
+
+Faturamento Mês Anterior = 
+CALCULATE(
+    [Faturamento Total],
+    DATEADD(dCalendario[Date], -1, MONTH)
+)
+
+Lucro Mês Anterior = 
+CALCULATE(
+    [Lucro Líquido],
+    DATEADD(dCalendario[Date], -1, MONTH)
+)
+
+Volume Mês Anterior = 
+CALCULATE(
+    [Volume de Vendas],
+    DATEADD(dCalendario[Date], -1, MONTH)
+)
+
+Ticket Médio Mês Anterior = 
+CALCULATE(
+    [Ticket Medio],
+    DATEADD(dCalendario[Date], -1, MONTH)
+)
+
+
+// -------------------------------------------------------------------------
+// 2. CÁLCULO DE VARIAÇÃO PERCENTUAL (MoM %)
+// Uso seguro da função DIVIDE para evitar erros de divisão por zero.
+// A lógica matemática aplicada é: (Mês Atual - Mês Anterior) / Mês Anterior.
+// -------------------------------------------------------------------------
+
+Var % Faturamento = 
+DIVIDE(
+    [Faturamento Total] - [Faturamento Mês Anterior],
+    [Faturamento Mês Anterior]
+)
+
+Var % Lucro = 
+DIVIDE(
+    [Lucro Líquido] - [Lucro Mês Anterior],
+    [Lucro Mês Anterior]
+)
+
+Var % Volume = 
+DIVIDE(
+    [Volume de Vendas] - [Volume Mês Anterior],
+    [Volume Mês Anterior]
+)
+
+Var % Ticket = 
+DIVIDE(
+    [Ticket Medio] - [Ticket Médio Mês Anterior],
+    [Ticket Médio Mês Anterior]
+)

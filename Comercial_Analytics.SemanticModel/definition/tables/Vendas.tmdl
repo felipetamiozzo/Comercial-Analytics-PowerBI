@@ -1,0 +1,154 @@
+table Vendas
+	lineageTag: fb42afda-0a4c-4bd9-aa0a-a1882049acbc
+
+	column ID-Produto
+		dataType: string
+		lineageTag: c4df8fe6-004c-4a9e-8b53-2dfe637cd817
+		summarizeBy: none
+		sourceColumn: ID-Produto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Produto
+		dataType: string
+		lineageTag: 400e6c1b-a8e8-4f2d-9383-de4ea555c0c4
+		summarizeBy: none
+		sourceColumn: Produto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Categoria
+		dataType: string
+		lineageTag: 1d0c5f0c-5809-4d02-b1da-dd977fc97a5f
+		summarizeBy: none
+		sourceColumn: Categoria
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segmento
+		dataType: string
+		lineageTag: 005ae09d-3810-442d-b65a-a43788347654
+		summarizeBy: none
+		sourceColumn: Segmento
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fabricante
+		dataType: string
+		lineageTag: 7fc246dd-bf1a-49cb-8d46-7a32be6ccbeb
+		summarizeBy: none
+		sourceColumn: Fabricante
+
+		annotation SummarizationSetBy = Automatic
+
+	column Loja
+		dataType: string
+		lineageTag: e83286a2-1c40-49b9-970a-b903c4d68272
+		summarizeBy: none
+		sourceColumn: Loja
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cidade
+		dataType: string
+		lineageTag: e53153ea-3b77-4336-99c5-a3e7589eea90
+		summarizeBy: none
+		sourceColumn: Cidade
+
+		annotation SummarizationSetBy = Automatic
+
+	column Estado
+		dataType: string
+		lineageTag: 69125df1-3c83-472d-b493-99d763d2020b
+		summarizeBy: none
+		sourceColumn: Estado
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vendedor
+		dataType: string
+		lineageTag: 81dfccf1-0ac5-45e4-81fc-09f87b9127e4
+		summarizeBy: none
+		sourceColumn: Vendedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID-Vendedor
+		dataType: int64
+		formatString: 0
+		lineageTag: cf619671-337d-4a26-a86b-0c289f480185
+		summarizeBy: sum
+		sourceColumn: ID-Vendedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Comissão (Percentual)'
+		dataType: double
+		formatString: 0
+		lineageTag: c6e0fa21-20b6-4f02-84ed-c4b92a98ab99
+		summarizeBy: sum
+		sourceColumn: Comissão (Percentual)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data Venda'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: bdea63f5-c0ba-4cf4-9294-2fb2a5c0bffe
+		summarizeBy: none
+		sourceColumn: Data Venda
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ValorVenda
+		dataType: double
+		lineageTag: 390b7d04-8350-4fcb-a89e-72e2f4e87611
+		summarizeBy: sum
+		sourceColumn: ValorVenda
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Custo
+		dataType: int64
+		formatString: 0
+		lineageTag: e23f2eef-5f4b-408e-9d6e-987ab4bdc11b
+		summarizeBy: sum
+		sourceColumn: Custo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valor Comissão '
+		dataType: decimal
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: 7ca377b0-f52d-4116-a3a5-03e4f81c079a
+		summarizeBy: sum
+		sourceColumn: "Valor Comissão "
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	partition Vendas = m
+		mode: import
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents("C:\Users\Felipe\Desktop\PBI Data Science Academy\MODULO 4 - Análise de dados ccomerciais\Comercial_Analytics\data\Dados_Comerciais.xlsx"), null, true),
+				    Vendas_Sheet = Fonte{[Item="Vendas",Kind="Sheet"]}[Data],
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Vendas_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"ID-Produto", type text}, {"Produto", type text}, {"Categoria", type text}, {"Segmento", type text}, {"Fabricante", type text}, {"Loja", type text}, {"Cidade", type text}, {"Estado", type text}, {"Vendedor", type text}, {"ID-Vendedor", Int64.Type}, {"Comissão (Percentual)", Int64.Type}, {"Data Venda", type date}, {"ValorVenda", type number}, {"Custo", Int64.Type}}),
+				    #"Coluna dividida" = Table.TransformColumns(#"Tipo Alterado", {{"Comissão (Percentual)", each _ / 100, type number}}),
+				    #"Tipo Alterado1" = Table.TransformColumnTypes(#"Coluna dividida",{{"Comissão (Percentual)", Percentage.Type}}),
+				    #"Personalização Adicionada" = Table.AddColumn(#"Tipo Alterado1", "Valor Comissão ", each [ValorVenda] * [#"Comissão (Percentual)"]),
+				    #"Tipo Alterado3" = Table.TransformColumnTypes(#"Personalização Adicionada",{{"Valor Comissão ", Currency.Type}}),
+				    #"Tipo Alterado2" = Table.TransformColumnTypes(#"Tipo Alterado3",{{"Valor Comissão ", Currency.Type}})
+				in
+				    #"Tipo Alterado2"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+
