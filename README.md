@@ -1,7 +1,7 @@
 
 # Comercial Analytics | PowerBI
 
-![Capa do Projeto](assets/capa.jpg) 
+![Capa do Projeto](assets/capa.png) 
 
 ## 📋 Visão Geral do Projeto
 Este projeto de Análise de Dados foi desenvolvido para monitorar indicadores estratégicos de vendas, faturamento e performance comercial. Seguindo padrões de mercado em nível de excelência, o dashboard transforma dados brutos em insights acionáveis, entregando à diretoria e aos gestores uma ferramenta ágil para identificar gargalos na margem de lucro e ranquear a performance regional e individual.
@@ -39,9 +39,13 @@ O dashboard foi projetado como uma aplicação interativa, dividida em um HUB ce
 
 ---
 
-## 🖥️ Telas do Dashboard e Métricas Chave
+## 🖥️ Telas do Dashboard
 
-### 1. Visão Executiva
+### 1. Capa Interativa (Home)
+
+### 2. Visão Executiva
+![Visão Executiva](https://raw.githubusercontent.com/felipetamiozzo/Comercial-Analytics-PowerBI/main/assets/visao_executiva.png)
+
 
 **Principais Insights do Módulo:**
 
@@ -50,7 +54,8 @@ O dashboard foi projetado como uma aplicação interativa, dividida em um HUB ce
 * **Volume vs Ticket:** Foram registradas 457 vendas (+3.6%). O Ticket Médio ficou em R$ 786,23, apresentando um leve alerta de queda (-1.3%) que exige atenção nas estratégias de *upsell*.
 * **Análise de Mix (Top Performers):** A categoria "Eletrodomésticos" domina as receitas (R$ 193 mil), com a marca "Brastemp" liderando o faturamento individual de fabricantes (R$ 93 mil).
 
-### 2. Visão Temporal
+### 3. Visão Temporal
+![Visão Temporal](https://raw.githubusercontent.com/felipetamiozzo/Comercial-Analytics-PowerBI/main/assets/visao_temporal.png)
 
 **Principais Insights do Módulo:**
 
@@ -58,7 +63,8 @@ O dashboard foi projetado como uma aplicação interativa, dividida em um HUB ce
 * **Controle de Margem de Lucro:** A margem manteve-se estável acima de 80% na maior parte do ano, sofrendo quedas sensíveis nos meses de Agosto e Dezembro (ponto focal de investigação de custos).
 * **Variações Críticas:** Quedas acentuadas de faturamento mês a mês foram detectadas em Junho (-29%) e Agosto (-36%).
 
-### 3. Visão Operacional
+### 4. Visão Operacional
+![Visão Operacional](https://raw.githubusercontent.com/felipetamiozzo/Comercial-Analytics-PowerBI/main/assets/visao_operacional.png)
 
 **Principais Insights do Módulo:**
 
